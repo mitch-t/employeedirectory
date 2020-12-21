@@ -1,0 +1,11 @@
+.searchbox input{
+    width: 75%;
+    height: 95%;
+}
+.searchbox button{
+    border: 1px solid blue;
+}
+.searchbox button:hover {
+    background-color: blue;
+    color:white;
+}

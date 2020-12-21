@@ -1,0 +1,10 @@
+.name-cell{
+    text-transform: capitalize;
+    background-color:rgb(64, 136, 209);
+    font-size: larger;
+}
+
+.img-responsive{
+    width:fit-content;
+    height:fit-content;
+}
