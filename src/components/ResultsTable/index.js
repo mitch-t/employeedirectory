@@ -4,39 +4,38 @@ import "./ResultsTable.css";
 import DataResults from "../../utils/DataResults";
 
 const ResultsTable = () => {
-    const context = useContext(DataResults);
+  const context = useContext(DataResults);
 
-    return (
+  return (
+    <div className="datatable mt-5">
+      <table
+        id="table"
+        className="table table-striped table-hover table-condensed"
+      >
+        <thead>
+          <tr>
+            {context.State.headings.map(({ name, width }) => {
+              return (
+                <th
+                  className="col"
+                  key={name}
+                  style={{ width }}
+                  onClick={() => {
+                    context.handleSort(name.toLowerCase());
+                  }}
+                >
+                  {name}
+                  <span className="pointer"></span>
+                </th>
+              );
+            })}
+          </tr>
+        </thead>
 
-        <div className="datatable mt-5">
-            <table
-                id="table"
-                className="table table-striped table-hover table-condensed"
-            >
-                <thead>
-                    <tr>
-                        {context.State.headings.map(({ name, width }) => {
-                            return (
-                                <th
-                                    className="col"
-                                    key={name}
-                                    style={{ width }}
-                                    onClick={() => {
-                                        context(name.toLowerCase());
-                                    }}
-                                >
-                                    {name}
-                                    
-                                </th>
-                            );
-                        })}
-                    </tr>
-                </thead>
-
-                <ResultsBody />
-            </table>
-        </div>
-    );
-}
+        <ResultsBody />
+      </table>
+    </div>
+  );
+};
 
 export default ResultsTable;

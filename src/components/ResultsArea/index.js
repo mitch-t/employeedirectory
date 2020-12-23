@@ -13,8 +13,8 @@ const ResultsArea = () => {
     headings: [
       { name: "Image", width: "10%" },
       { name: "Name", width: "10%" },
-      { name: "Phone", width: "20%" },
-      { name: "Email", width: "15%" },
+      { name: "Phone", width: "15%" },
+      { name: "Email", width: "20%" },
       { name: "DOB", width: "15%" },
     ],
   });
