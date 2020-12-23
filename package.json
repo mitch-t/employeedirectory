@@ -1,6 +1,6 @@
 {
   "name": "employeedirectory",
-  "homepage": "https://github.com/mitch-t/employeedirectory",
+  "homepage": "https://mitch-t.github.io/employeedirectory",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,6 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
-  
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

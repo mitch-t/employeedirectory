@@ -1,11 +1,5 @@
 .searchbox input{
-    width: 75%;
-    height: 95%;
-}
-.searchbox button{
-    border: 1px solid blue;
-}
-.searchbox button:hover {
-    background-color: blue;
-    color:white;
+    height: 55px;
+    width:90%;
+    font-size: 14pt;
 }
