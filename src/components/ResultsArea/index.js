@@ -5,7 +5,7 @@ import API from "../../utils/API";
 import "./ResultsArea.css";
 import DataResults from "../../utils/DataResults";
 
-const DataArea = () => {
+const ResultsArea = () => {
   const [State, setState] = useState({
     users: [],
     order: "ascend",
@@ -14,11 +14,30 @@ const DataArea = () => {
       { name: "Image", width: "10%" },
       { name: "Name", width: "10%" },
       { name: "Phone", width: "20%" },
-      { name: "Email", width: "20%" },
-      { name: "DOB", width: "10%" },
+      { name: "Email", width: "15%" },
+      { name: "DOB", width: "15%" },
     ],
   });
 
+  const handleSort = heading => {
+    if (State.order === "descend") {
+        setState({
+            order:"ascend"
+        })
+    } else{
+        setState({
+            order:"descend"
+        })
+    }
+
+    const sortedUsers = State.filteredUsers.sort;
+
+        setState({
+          ...State,
+          filteredUsers: sortedUsers
+});
+
+ };
   const handleSearchChange = (event) => {
     const filter = event.target.value;
     const filteredList = State.users.filter((item) => {
@@ -43,13 +62,13 @@ const DataArea = () => {
   }, []);
 
   return (
-    <DataResults.Provider value={{ State, handleSearchChange }}>
+    <DataResults.Provider value={{ State, handleSearchChange,handleSort }}>
       <Nav />
-      <div className="data-area">
+      <div className="results-area">
         {State.filteredUsers.length > 0 ? <ResultsTable /> : <div></div>}
       </div>
     </DataResults.Provider>
   );
 };
 
-export default DataArea;
+export default ResultsArea;
